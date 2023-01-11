@@ -13,7 +13,7 @@ import {
 import { ClientProxy } from '@nestjs/microservices';
 import { CriarCategoriaDTO } from 'src/dtos/categoria/criar-categoria.dto';
 import { AtualizarCategoriaDTO } from 'src/dtos/categoria/atualizar-categoria.dto';
-import { CONNECTION_RABBITMQ } from 'src/config/connection.rabbitmq.amqp';
+import { CONNECTION_MICROADMIN } from 'src/config/connection.rabbitmq.amqp';
 
 @Controller('/api/v1/categorias')
 export class CategoriaController {
@@ -21,7 +21,7 @@ export class CategoriaController {
   private clientAdminBackEnd: ClientProxy;
 
   constructor() {
-    this.clientAdminBackEnd = CONNECTION_RABBITMQ;
+    this.clientAdminBackEnd = CONNECTION_MICROADMIN;
   }
 
   @Post()

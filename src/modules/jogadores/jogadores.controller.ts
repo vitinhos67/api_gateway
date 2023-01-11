@@ -12,7 +12,7 @@ import {
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { CONNECTION_RABBITMQ } from 'src/config/connection.rabbitmq.amqp';
+import { CONNECTION_MICROADMIN } from 'src/config/connection.rabbitmq.amqp';
 import { AtualizarJogadorDTO } from 'src/dtos/jogadores/atualizar-jogador.dto';
 import { CriarJogadorDTO } from 'src/dtos/jogadores/criarJogador.dto';
 import { Express } from 'express';
@@ -23,7 +23,7 @@ export class JogadoresController {
   private clientAdminBackEnd: ClientProxy;
 
   constructor(private readonly awsService: AwsService) {
-    this.clientAdminBackEnd = CONNECTION_RABBITMQ;
+    this.clientAdminBackEnd = CONNECTION_MICROADMIN;
   }
 
   @Get()

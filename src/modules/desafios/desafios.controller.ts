@@ -1,13 +1,13 @@
 import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
-import { CONNECTION_RABBITMQ } from 'src/config/connection.rabbitmq.amqp';
+import { CONNECTION_DESAFIOS } from 'src/config/connection.rabbitmq.amqp';
 import { CriarCategoriaDTO } from 'src/dtos/categoria/criar-categoria.dto';
 
 @Controller('api/v1/desafios')
 export class DesafiosController {
   private adminBackEnd: ClientProxy;
   constructor() {
-    this.adminBackEnd = CONNECTION_RABBITMQ;
+    this.adminBackEnd = CONNECTION_DESAFIOS;
   }
 
   @Get()

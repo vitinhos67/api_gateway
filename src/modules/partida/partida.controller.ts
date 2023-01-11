@@ -7,7 +7,7 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
-import { CONNECTION_RABBITMQ } from 'src/config/connection.rabbitmq.amqp';
+import { CONNECTION_DESAFIOS } from 'src/config/connection.rabbitmq.amqp';
 import { CriarPartidaDTO } from 'src/dtos/partidas/criarPartidaDTO';
 
 @Controller('api/v1/partidas')
@@ -15,7 +15,7 @@ export class PartidaController {
   adminBackEnd: ClientProxy;
 
   constructor() {
-    this.adminBackEnd = CONNECTION_RABBITMQ;
+    this.adminBackEnd = CONNECTION_DESAFIOS;
   }
 
   @Get()
