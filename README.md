@@ -24,7 +24,7 @@
 
 ## Descrição
 
-API que tem sua função como event submitter para enviar mensagens para um micro-serviço.
+API que tem sua função como event emitter (emissor de evento) para enviar mensagens para um micro-serviço.
 
 ## Instalação
 
